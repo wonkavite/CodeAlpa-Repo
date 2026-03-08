@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Katsiga Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+<body class="bg-stone-200 min-h-screen flex items-center justify-center p-4">
+
+    <div class="calculator-body bg-stone-800 p-6 rounded-2xl shadow-2xl w-full max-w-md">
+        <div class="display-container bg-emerald-900/20 p-4 rounded-lg mb-6 border-4 border-stone-900 shadow-inner">
+            <div id="previous-operand" class="text-stone-500 text-right text-sm h-6 overflow-hidden"></div>
+            <div id="current-display" class="text-white text-right text-4xl font-mono truncate">0</div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3">
+            <button class="btn btn-alt" onclick="clearScreen()">AC</button>
+            <button class="btn btn-alt" onclick="deleteNumber()">DEL</button>
+            <button class="btn btn-op" onclick="appendOperator('^')">^</button>
+            <button class="btn btn-op" onclick="appendOperator('/')">÷</button>
+
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn btn-op" onclick="appendOperator('*')">×</button>
+
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn btn-op" onclick="appendOperator('-')">-</button>
+
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn btn-op" onclick="appendOperator('+')">+</button>
+
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+            <button class="btn btn-equals col-span-2" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script src="Calculator.js"></script>
+</body>
+</html>
